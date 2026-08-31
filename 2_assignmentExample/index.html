@@ -1,0 +1,111 @@
+<!-- DM3014 Interactive Devices, Ashley Hi 2026
+  -- Week 3 - Net Art
+  -- Assignment Example
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sculpture As 100 Hyperlinks</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+</head>
+<body>
+<script>
+  // ------------------------------------------------------------------
+  // EDIT ME
+  // One object per hyperlink on the page:
+  //   x, y   -> where it sits on the page, in pixel coordinates
+  //   label  -> the clickable text
+  //   url    -> where it links to
+  //   w, h   -> (optional) popup window size for this link only.
+  //             leave them out and it uses defaultWidth/defaultHeight below
+  //
+  // To add a link: copy any line, change the values, add a comma.
+  // To remove a link: delete its line.
+ 
+  let links = [
+  //random people
+  { x: 100, y: 120, label: "이거 없이 살 수 없다 ", url: "https://www.youtube.com/watch?v=D2HF-1xjpP8" },
+  { x: 230, y: 180, label: "이곳에도 살았다", url: "https://www.ted.com/talks/reuben_margolin_sculpting_waves_in_wood_and_time?language=en", w: 700, h: 500 },
+  { x: 318, y: 120, label: "최근 플리", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1", w: 700, h: 650 },
+
+
+  { x: 600, y: 480, label: "읽고 싶은", url: "https://www.ted.com/talks/reuben_margolin_sculpting_waves_in_wood_and_time?language=en", w: 700, h: 500 },
+  { x: 600, y: 500, label: "책1", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1", w: 700, h: 650 },
+  { x: 600, y: 520, label: "책2", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1", w: 700, h: 650 },
+
+  { x: 700, y: 480, label: "읽었었던", url: "https://www.ted.com/talks/reuben_margolin_sculpting_waves_in_wood_and_time?language=en", w: 700, h: 500 },
+  { x: 700, y: 500, label: "책1", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1", w: 700, h: 650 },
+  { x: 700, y: 520, label: "책2", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1", w: 700, h: 650 },
+
+
+  { x: 530, y: 120, label: "missing somebody", url: "http://www.hypersonic.cc/#!/projects/diffusion-choir" },
+  { x: 800, y: 120, label: "DONT TOUCH ME", url: "https://artcom.de/en/project/mobility/" },
+ 
+  //coffee
+  { x: 290, y: 320, label: "cup", url: "https://www.amazon.co.uk/Innovateking-EU-MG996R-Torque-Digital-Helicopter/dp/B07JN7F9VY/ref=pd_sbs_21_13?_encoding=UTF8&pd_rd_i=B07JN7F9VY&pd_rd_r=5b02d19c-12e6-11e9-82c4-490c12df652f&pd_rd_w=M2lYD&pd_rd_wg=PbYSH&pf_rd_p=18edf98b-139a-41ee-bb40-d725dd59d1d3&pf_rd_r=SD509MZT1WZPBMQS1N8T&psc=1&refRID=SD509MZT1WZPBMQS1N8T" },
+  { x: 310, y: 340, label: "cup", url: "https://www.amazon.co.uk/Innovateking-EU-MG996R-Torque-Digital-Helicopter/dp/B07JN7F9VY/ref=pd_sbs_21_13?_encoding=UTF8&pd_rd_i=B07JN7F9VY&pd_rd_r=5b02d19c-12e6-11e9-82c4-490c12df652f&pd_rd_w=M2lYD&pd_rd_wg=PbYSH&pf_rd_p=18edf98b-139a-41ee-bb40-d725dd59d1d3&pf_rd_r=SD509MZT1WZPBMQS1N8T&psc=1&refRID=SD509MZT1WZPBMQS1N8T" },
+  { x: 290, y: 360, label: "cup", url: "https://www.amazon.co.uk/Innovateking-EU-MG996R-Torque-Digital-Helicopter/dp/B07JN7F9VY/ref=pd_sbs_21_13?_encoding=UTF8&pd_rd_i=B07JN7F9VY&pd_rd_r=5b02d19c-12e6-11e9-82c4-490c12df652f&pd_rd_w=M2lYD&pd_rd_wg=PbYSH&pf_rd_p=18edf98b-139a-41ee-bb40-d725dd59d1d3&pf_rd_r=SD509MZT1WZPBMQS1N8T&psc=1&refRID=SD509MZT1WZPBMQS1N8T" },
+  { x: 200, y: 320, label: "Need Coffee", url: "https://www.amazon.co.uk/Stemedu-Servo-Analog-Accessories-Arduino/dp/B07H7YTC4H/ref=sr_1_8?ie=UTF8&qid=1546911223&sr=8-8&keywords=servo+tower+pro" },
+  { x: 200, y: 340, label: "Need Coffee", url: "https://www.amazon.co.uk/Stemedu-Servo-Analog-Accessories-Arduino/dp/B07H7YTC4H/ref=sr_1_8?ie=UTF8&qid=1546911223&sr=8-8&keywords=servo+tower+pro" },
+  { x: 200, y: 360, label: "Need Coffee", url: "https://www.amazon.co.uk/Stemedu-Servo-Analog-Accessories-Arduino/dp/B07H7YTC4H/ref=sr_1_8?ie=UTF8&qid=1546911223&sr=8-8&keywords=servo+tower+pro" },
+  { x: 320, y: 240, label: "brew", url: "http://www.griggio.com/en/products/band-saws/sna-snac/" },
+  { x: 300, y: 260, label: "brew", url: "http://www.griggio.com/en/products/band-saws/sna-snac/" },
+  { x: 280, y: 280, label: "brew", url: "http://www.griggio.com/en/products/band-saws/sna-snac/" },
+
+  //chat
+  { x: 370, y: 360, label: "i don't think he's right for you", url: "https://www.youtube.com/watch?v=SVCnivlXrhg&list=RD4WRzwC8DRcg&index=4" },
+  { x: 500, y: 380, label: "back off", url: "https://www.youtube.com/watch?v=bvO1KJAW5Jc&list=RD4WRzwC8DRcg&index=3" },  { x: 440, y: 500, label: "O", url: "https://circuitdigest.com/microcontroller-projects/arduino-dc-motor-speed-direction-control" },
+  { x: 480, y: 500, label: "X", url: "http://microcontrollerslab.com/relay-module-interfacing-arduino-arduino/" },
+  { x: 500, y: 520, label: "Open", url: "https://randomnerdtutorials.com/guide-for-relay-module-with-arduino/" },
+  
+  //clock
+  { x: 240, y: 540, label: "WHAT TIME?!", url: "https://www.youtube.com/watch?v=3hOP7qPDyI4" },
+  { x: 270, y: 480, label: "Twelve", url: "https://www.youtube.com/watch?v=iD2HocXI9sU" },
+  { x: 310, y: 500, label: "One", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+  { x: 340, y: 520, label: "Two", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+  { x: 360, y: 540, label: "Three", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+  { x: 340, y: 560, label: "Four", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+  { x: 310, y: 580, label: "Five", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" }, 
+  { x: 280, y: 600, label: "Six", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+  { x: 310, y: 580, label: "Five", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" }, 
+  { x: 240, y: 580, label: "Seven", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+  { x: 200, y: 560, label: "Eight", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+  { x: 180, y: 540, label: "Nine", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+  { x: 200, y: 520, label: "Ten", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+  { x: 220, y: 500, label: "Eleven", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+
+  { x: 420, y: 300, label: "404", url: "https://www.youtube.com/watch?v=3_l-UI4prVY" },
+
+];
+  // ------------------------------------------------------------------
+  
+  // popup size used for any link that doesn't set its own w/h
+  let defaultWidth = 500;
+  let defaultHeight = 600;
+
+  function setup() {
+    noCanvas(); // this page only places links, so we don't need a canvas
+    for (let i = 0; i < links.length; i++) {
+      let link = links[i];
+      let a = createA('javascript:void(0)', link.label);
+      a.position(link.x, link.y);
+      a.mousePressed(() => openPopup(link));
+    }
+  }
+
+  // opens a link in its own small popup window
+  function openPopup(link) {
+    let w = link.w || defaultWidth;
+    let h = link.h || defaultHeight;
+    window.open(
+      link.url,
+      '_blank',
+      `width=${w},height=${h},left=100,top=50,resizable=yes,scrollbars=yes`
+    );
+  }
+
+</script>
+</body>
+</html>
