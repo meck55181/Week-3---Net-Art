@@ -26,57 +26,54 @@
  
   let links = [
   //random people
-  { x: 100, y: 120, label: "이거 없이 살 수 없다 ", url: "https://www.youtube.com/watch?v=D2HF-1xjpP8" },
-  { x: 230, y: 180, label: "이곳에도 살았다", url: "https://www.ted.com/talks/reuben_margolin_sculpting_waves_in_wood_and_time?language=en", w: 700, h: 500 },
-  { x: 318, y: 120, label: "최근 플리", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1", w: 700, h: 650 },
+  { x: 100, y: 120, label: "essential playlist ", url: "https://www.youtube.com/" },
 
+  //book
+  { x: 540, y: 260, label: "2", url: "https://www.youtube.com/watch?v=fuOsmhDaj-0&t=5485s" },
+  { x: 605, y: 320, label: "boook", url: "https://www.youtube.com/watch?v=rT11_xHkxPw&t=4529s" },
+  { x: 600, y: 300, label: "book", url: "https://www.youtube.com/watch?v=B8GWFcyHEbQ&t=3s" },
+  { x: 595, y: 340, label: "booook", url: "https://www.youtube.com/watch?v=6sn_VaCwB-A&t=1s" },
+  { x: 605, y: 360, label: "book", url: "https://www.youtube.com/watch?v=UZK77iJf6cA&t=1682s" },
+  { x: 600, y: 380, label: "booook", url: "https://www.youtube.com/watch?v=B5Fa1vikHYA" },
 
-  { x: 600, y: 480, label: "읽고 싶은", url: "https://www.ted.com/talks/reuben_margolin_sculpting_waves_in_wood_and_time?language=en", w: 700, h: 500 },
-  { x: 600, y: 500, label: "책1", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1", w: 700, h: 650 },
-  { x: 600, y: 520, label: "책2", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1", w: 700, h: 650 },
-
-  { x: 700, y: 480, label: "읽었었던", url: "https://www.ted.com/talks/reuben_margolin_sculpting_waves_in_wood_and_time?language=en", w: 700, h: 500 },
-  { x: 700, y: 500, label: "책1", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1", w: 700, h: 650 },
-  { x: 700, y: 520, label: "책2", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1", w: 700, h: 650 },
-
-
-  { x: 530, y: 120, label: "missing somebody", url: "http://www.hypersonic.cc/#!/projects/diffusion-choir" },
-  { x: 800, y: 120, label: "DONT TOUCH ME", url: "https://artcom.de/en/project/mobility/" },
- 
   //coffee
-  { x: 290, y: 320, label: "cup", url: "https://www.amazon.co.uk/Innovateking-EU-MG996R-Torque-Digital-Helicopter/dp/B07JN7F9VY/ref=pd_sbs_21_13?_encoding=UTF8&pd_rd_i=B07JN7F9VY&pd_rd_r=5b02d19c-12e6-11e9-82c4-490c12df652f&pd_rd_w=M2lYD&pd_rd_wg=PbYSH&pf_rd_p=18edf98b-139a-41ee-bb40-d725dd59d1d3&pf_rd_r=SD509MZT1WZPBMQS1N8T&psc=1&refRID=SD509MZT1WZPBMQS1N8T" },
-  { x: 310, y: 340, label: "cup", url: "https://www.amazon.co.uk/Innovateking-EU-MG996R-Torque-Digital-Helicopter/dp/B07JN7F9VY/ref=pd_sbs_21_13?_encoding=UTF8&pd_rd_i=B07JN7F9VY&pd_rd_r=5b02d19c-12e6-11e9-82c4-490c12df652f&pd_rd_w=M2lYD&pd_rd_wg=PbYSH&pf_rd_p=18edf98b-139a-41ee-bb40-d725dd59d1d3&pf_rd_r=SD509MZT1WZPBMQS1N8T&psc=1&refRID=SD509MZT1WZPBMQS1N8T" },
-  { x: 290, y: 360, label: "cup", url: "https://www.amazon.co.uk/Innovateking-EU-MG996R-Torque-Digital-Helicopter/dp/B07JN7F9VY/ref=pd_sbs_21_13?_encoding=UTF8&pd_rd_i=B07JN7F9VY&pd_rd_r=5b02d19c-12e6-11e9-82c4-490c12df652f&pd_rd_w=M2lYD&pd_rd_wg=PbYSH&pf_rd_p=18edf98b-139a-41ee-bb40-d725dd59d1d3&pf_rd_r=SD509MZT1WZPBMQS1N8T&psc=1&refRID=SD509MZT1WZPBMQS1N8T" },
-  { x: 200, y: 320, label: "Need Coffee", url: "https://www.amazon.co.uk/Stemedu-Servo-Analog-Accessories-Arduino/dp/B07H7YTC4H/ref=sr_1_8?ie=UTF8&qid=1546911223&sr=8-8&keywords=servo+tower+pro" },
-  { x: 200, y: 340, label: "Need Coffee", url: "https://www.amazon.co.uk/Stemedu-Servo-Analog-Accessories-Arduino/dp/B07H7YTC4H/ref=sr_1_8?ie=UTF8&qid=1546911223&sr=8-8&keywords=servo+tower+pro" },
-  { x: 200, y: 360, label: "Need Coffee", url: "https://www.amazon.co.uk/Stemedu-Servo-Analog-Accessories-Arduino/dp/B07H7YTC4H/ref=sr_1_8?ie=UTF8&qid=1546911223&sr=8-8&keywords=servo+tower+pro" },
+  { x: 200, y: 240, label: "1", url: "https://www.youtube.com/watch?v=2Vwvm365btE&t=844s" },
+  { x: 290, y: 320, label: "cup", url: "https://www.youtube.com/watch?v=2Vwvm365btE&t=844s" },
+  { x: 310, y: 340, label: "cup", url: "https://www.youtube.com/watch?v=2Vwvm365btE&t=844s" },
+  { x: 290, y: 360, label: "cup", url: "https://www.youtube.com/watch?v=2Vwvm365btE&t=844s" },
+  { x: 200, y: 320, label: "Need Coffee", url: "https://www.youtube.com/watch?v=2Vwvm365btE&t=844s" },
+  { x: 200, y: 340, label: "Need Coffee", url: "https://www.youtube.com/watch?v=2Vwvm365btE&t=844s" },
+  { x: 200, y: 360, label: "Need Coffee", url: "https://www.youtube.com/watch?v=2Vwvm365btE&t=844s" },
   { x: 320, y: 240, label: "brew", url: "http://www.griggio.com/en/products/band-saws/sna-snac/" },
   { x: 300, y: 260, label: "brew", url: "http://www.griggio.com/en/products/band-saws/sna-snac/" },
   { x: 280, y: 280, label: "brew", url: "http://www.griggio.com/en/products/band-saws/sna-snac/" },
 
-  //chat
-  { x: 370, y: 360, label: "i don't think he's right for you", url: "https://www.youtube.com/watch?v=SVCnivlXrhg&list=RD4WRzwC8DRcg&index=4" },
-  { x: 500, y: 380, label: "back off", url: "https://www.youtube.com/watch?v=bvO1KJAW5Jc&list=RD4WRzwC8DRcg&index=3" },  { x: 440, y: 500, label: "O", url: "https://circuitdigest.com/microcontroller-projects/arduino-dc-motor-speed-direction-control" },
-  { x: 480, y: 500, label: "X", url: "http://microcontrollerslab.com/relay-module-interfacing-arduino-arduino/" },
-  { x: 500, y: 520, label: "Open", url: "https://randomnerdtutorials.com/guide-for-relay-module-with-arduino/" },
-  
   //clock
-  { x: 240, y: 540, label: "WHAT TIME?!", url: "https://www.youtube.com/watch?v=3hOP7qPDyI4" },
-  { x: 270, y: 480, label: "Twelve", url: "https://www.youtube.com/watch?v=iD2HocXI9sU" },
-  { x: 310, y: 500, label: "One", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
-  { x: 340, y: 520, label: "Two", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
-  { x: 360, y: 540, label: "Three", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
-  { x: 340, y: 560, label: "Four", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
-  { x: 310, y: 580, label: "Five", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" }, 
-  { x: 280, y: 600, label: "Six", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
-  { x: 310, y: 580, label: "Five", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" }, 
-  { x: 240, y: 580, label: "Seven", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
-  { x: 200, y: 560, label: "Eight", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
-  { x: 180, y: 540, label: "Nine", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
-  { x: 200, y: 520, label: "Ten", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
-  { x: 220, y: 500, label: "Eleven", url: "https://www.amazon.co.uk/Channel-12v-Relay-Module-Operating/dp/B00UB30GGO" },
+  { x: 180, y: 460, label: "3", url: "https://www.youtube.com/watch?v=eVli-tstM5E&list=RD4WRzwC8DRcg&index=27" },
+  { x: 240, y: 540, label: "WHAT TIME?!", url: "https://www.youtube.com/watch?v=3hOP7qPDyI4&list=RDMM&start_radio=1&rv=05BWsYqMiYE" },
+  { x: 265, y: 480, label: "Twelve", url: "https://www.youtube.com/watch?v=iD2HocXI9sU" },
+  { x: 320, y: 500, label: "One", url: "https://www.youtube.com/watch?v=Lh_a_PH1MJY&list=RDMM&index=3" },
+  { x: 340, y: 520, label: "Two", url: "https://www.youtube.com/watch?v=ZbO9PBdFRdc&list=RD4WRzwC8DRcg&index=5" },
+  { x: 360, y: 540, label: "Three", url: "https://www.youtube.com/watch?v=h0xUtrb_JBc&list=RDMM&index=21" },
+  { x: 340, y: 560, label: "Four", url: "https://www.youtube.com/watch?v=acg8RO1O7ZI&list=RD4WRzwC8DRcg&index=35" },
+  { x: 320, y: 580, label: "Five", url: "https://www.youtube.com/watch?v=05BWsYqMiYE&list=RD4WRzwC8DRcg&index=49" }, 
+  { x: 275, y: 600, label: "Six", url: "https://www.youtube.com/watch?v=fOLOmSoFzGc&list=PLAm94M4T8R0QuponLfJm68m4hTV2Qp52A" },
+  { x: 220, y: 580, label: "Seven", url: "https://www.youtube.com/watch?v=zyAgEyG8m0Q&list=RD4WRzwC8DRcg&index=48" },
+  { x: 195, y: 560, label: "Eight", url: "https://www.youtube.com/watch?v=7G3fLiRw9ns&list=PLAm94M4T8R0QuponLfJm68m4hTV2Qp52A&index=4" },
+  { x: 180, y: 540, label: "Nine", url: "https://www.youtube.com/watch?v=UJn-F2kPCaQ&list=RD4WRzwC8DRcg&index=22" },
+  { x: 200, y: 520, label: "Ten", url: "https://www.youtube.com/watch?v=EIc13cn7tWo&list=RD4WRzwC8DRcg&index=3" },
+  { x: 220, y: 500, label: "Eleven", url: "https://www.youtube.com/watch?v=-lcVA_rn-7s&list=RDMM&index=3" },
 
-  { x: 420, y: 300, label: "404", url: "https://www.youtube.com/watch?v=3_l-UI4prVY" },
+  //heels
+  { x: 540, y: 460, label: "4", url: "https://www.youtube.com/watch?v=4WRzwC8DRcg&list=RD4WRzwC8DRcg&start_radio=1" },
+  { x: 600, y: 480, label: "shoesss", url: "https://www.youtube.com/watch?v=0kmFzlS7lxE&t=1097s", w: 700, h: 500 },
+  { x: 580, y: 500, label: "shoess", url: "https://www.youtube.com/watch?v=8TeeJvcBdLA&list=RDMM&index=24", w: 700, h: 650 },
+  { x: 560, y: 520, label: "shoes", url: "https://www.youtube.com/watch?v=z246K3KBZjo&list=RDMM&index=13", w: 700, h: 650 },
+  { x: 540, y: 540, label: "shoe", url: "https://www.youtube.com/watch?v=w8P-BIQU1qI&list=RDMM&index=19", w: 700, h: 650 },
+  { x: 660, y: 480, label: "h", url: "https://www.youtube.com/watch?v=2iK3ccCsI6s&list=RDMM&index=33", w: 700, h: 650 },
+  { x: 660, y: 500, label: "e", url: "https://www.youtube.com/watch?v=agL-oiDlyYo&list=RDMM&index=43", w: 700, h: 650 },
+  { x: 660, y: 520, label: "e", url: "https://www.youtube.com/watch?v=ycZ6X9_APCs&list=RDMM&index=27", w: 700, h: 650 },
+  { x: 660, y: 540, label: "l", url: "https://www.youtube.com/watch?v=Uz5zeFQzIL4&list=RDMM&index=27", w: 700, h: 650 },
 
 ];
   // ------------------------------------------------------------------
